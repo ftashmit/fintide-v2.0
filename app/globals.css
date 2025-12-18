@@ -148,6 +148,18 @@
   .yellow-btn {
     @apply h-12 cursor-pointer bg-gradient-to-b from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-400 text-gray-950 font-medium text-base rounded-lg shadow-lg disabled:opacity-50;
   }
+  .green-btn {
+    @apply h-12 cursor-pointer
+         bg-gradient-to-b from-green-600 to-green-700
+         text-gray-100 font-medium text-base
+         rounded-lg shadow-lg
+         border
+         transition-colors duration-200
+         hover:bg-gray-800 hover:bg-none hover:text-green-400
+         hover:border-green-600
+         disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
   .home-wrapper {
     @apply text-gray-400 flex-col gap-4 md:gap-10 items-center sm:items-start;
   }
@@ -179,10 +191,10 @@
     @apply text-xs md:text-lg font-bold text-gray-400 not-italic;
   }
   .auth-dashboard-preview {
-    @apply border-6 border-gray-800 left-0 hidden w-[1024px] h-auto max-w-none lg:block rounded-xl shadow-2xl;
+    @apply border-6 border-black left-0 hidden w-[1024px] h-auto max-w-none lg:block rounded-xl shadow-2xl;
   }
   .form-title {
-    @apply text-4xl font-bold text-gray-400 mb-10;
+    @apply text-4xl font-bold text-gray-400 mb-5;
   }
   .form-label {
     @apply text-sm font-medium text-gray-400;
@@ -206,7 +218,7 @@
     @apply text-white cursor-pointer px-3 py-2 rounded-sm bg-gray-800 hover:!bg-gray-600;
   }
   .footer-link {
-    @apply text-gray-400 font-medium hover:text-yellow-400 hover:underline transition-colors;
+    @apply text-gray-400 font-medium hover:text-green-400 transition-colors;
   }
   .search-text {
     @apply cursor-pointer hover:text-yellow-500;
