@@ -161,6 +161,7 @@
          rounded-lg shadow-lg
          border
          transition-colors duration-100
+         transition-colors duration-200
          hover:bg-gray-800 hover:bg-none hover:text-green-400
          hover:border-green-600
          disabled:opacity-50 disabled:cursor-not-allowed;
@@ -197,10 +198,10 @@
     @apply text-xs md:text-lg font-bold text-gray-400 not-italic;
   }
   .auth-dashboard-preview {
-    @apply border-6 border-gray-800 left-0 hidden w-[1024px] h-auto max-w-none lg:block rounded-xl shadow-2xl;
+    @apply border-6 border-black left-0 hidden w-[1024px] h-auto max-w-none lg:block rounded-xl shadow-2xl;
   }
   .form-title {
-    @apply text-4xl font-bold text-gray-400 mb-10;
+    @apply text-4xl font-bold text-gray-400 mb-5;
   }
   .form-label {
     @apply text-sm font-medium text-gray-400;
@@ -224,7 +225,7 @@
     @apply text-white cursor-pointer px-3 py-2 rounded-sm bg-gray-800 hover:!bg-gray-600;
   }
   .footer-link {
-    @apply text-gray-400 font-medium hover:text-yellow-400 hover:underline transition-colors;
+    @apply text-gray-400 font-medium hover:text-green-400 transition-colors;
   }
   .search-text {
     @apply cursor-pointer hover:text-yellow-500;
@@ -468,7 +469,7 @@
 }
 
 .custom-chart.tradingview-widget-container iframe {
-  border: 1px solid #30333a;
+  border: 1px solid #15161a;
   border-radius: 8px !important;
   overflow: hidden !important;
 }
