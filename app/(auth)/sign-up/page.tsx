@@ -71,9 +71,15 @@ const SignUp = () => {
           error={errors.password}
           type="password"
           validation={{
-            required:
-              "8-digit Password is required with a combination of alphabets and numbers",
-            minLength: 8,
+            required: "Password is required",
+            minLength: {
+              value: 8,
+              message: "Password must be at least 8 characters",
+            },
+            pattern: {
+              value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+              message: "Password must contain both letters and numbers",
+            },
           }}
         />
         <CountrySelectField
