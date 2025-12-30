@@ -43,7 +43,6 @@ const Home = () => {
         </div>
         <div className="md:col-span-1 h-full xl:col-span-2">
           <TradingViewWidget
-           
             scriptUrl={`${scriptUrl}market-quotes.js`}
             config={MARKET_DATA_WIDGET_CONFIG}
             className="custom-chart"

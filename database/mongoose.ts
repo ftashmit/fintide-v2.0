@@ -29,11 +29,12 @@ export const connectToDatabase = async () => {
 
   try {
     cached.conn = await cached.promise;
-    console.log(`✅ MongoDB connected:${process.env.NODE_ENV} phase - ${MONGODB_URI}`);
-    return cached.conn;
+    
   } catch (err) {
     cached.promise = null;
     console.error("❌ MongoDB connection error", err);
     throw err;
   }
+    console.log(`✅ MongoDB connected:${process.env.NODE_ENV} phase - ${MONGODB_URI}`);
+    return cached.conn;
 };

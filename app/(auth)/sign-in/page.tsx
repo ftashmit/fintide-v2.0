@@ -5,7 +5,7 @@ import InputField from "@/components/forms/InputField";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { useForm } from "react-hook-form";
-
+import { ArrowUpRight } from "lucide-react";
 const SignIn = () => {
   const {
     register,
@@ -69,13 +69,19 @@ const SignIn = () => {
           }}
         />
 
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-          className="green-btn w-full mt-2"
-        >
-          {isSubmitting ? "Signing In..." : "Sign In"}
-        </Button>
+        <div className="group w-full">
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="custom-btn slide-anime w-full mt-2 font-semibold text-white bg-green-600 hover:bg-black hover:text-green-500 hover:ring-1 hover:ring-green-400 text-md"
+          >
+            <span>{isSubmitting ? "Signing In..." : "Sign In"}</span>
+
+            <span className="arrow-icon">
+              <ArrowUpRight size={18} strokeWidth={3} />
+            </span>
+          </Button>
+        </div>
 
         <FooterLink
           text="Don't have an account?"
