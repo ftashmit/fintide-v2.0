@@ -389,6 +389,39 @@
     @apply text-gray-400 rounded-full hover:bg-red-600/15 bg-transparent cursor-pointer transition-colors;
   }
 }
+/* ---- custom button component for Tailwind ----
+   Add this into your globals.css (inside tailwind build)
+   Editable variables:
+     --btn-bg     - background for light mode (defaults to green)
+     --btn-color  - text color for light mode (defaults to white)
+     --btn-radius - border radius (defaults to 9999px)
+*/
+@layer components {
+  .custom-btn {
+    @apply cursor-pointer px-5 py-3 font-semibold
+           flex items-center justify-between
+           transition-all duration-200
+           bg-green-500 text-white;
+
+    width: 180px;
+    border-radius: 9999px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .custom-btn:hover {
+    @apply bg-green-600;
+  }
+
+  .custom-btn .arrow-icon {
+    @apply inline-flex items-center justify-center transition-transform duration-200;
+    transform: translateX(0);
+  }
+
+  .group:hover .custom-btn .arrow-icon {
+    transform: translateX(8px);
+  }
+}
 
 /* Market News Component Styles */
 .scrollbar-hide {

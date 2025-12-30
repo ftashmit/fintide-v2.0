@@ -10,6 +10,7 @@ import {
   PREFERRED_INDUSTRIES,
   RISK_TOLERANCE_OPTIONS,
 } from "@/lib/constants";
+import { ArrowUpRight } from "lucide-react";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -110,16 +111,24 @@ const SignUp = () => {
           control={control}
           error={errors.preferredIndustry}
           required
-        />
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-          className="green-btn w-full mt-2"
-        >
-          {isSubmitting
-            ? "Creating Account..."
-            : "Start Your Investment Journey"}
-        </Button>
+        />{" "}
+        <div className="group w-full">
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="custom-btn slide-anime w-full mt-2 font-semibold text-white bg-green-500 hover:bg-black hover:text-green-500 hover:ring-1 hover:ring-green-400 text-md"
+          >
+            <span>
+              {isSubmitting
+                ? "Creating Account..."
+                : "Start Your Investment Journey"}
+            </span>
+
+            <span className="arrow-icon font-bold">
+              <ArrowUpRight size={18} strokeWidth={3} />
+            </span>
+          </Button>
+        </div>
         <FooterLink
           text="Already have an account?"
           linkText="Sign In"
