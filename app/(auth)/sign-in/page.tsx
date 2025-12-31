@@ -6,7 +6,13 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { ArrowUpRight } from "lucide-react";
+import { toast } from "sonner";
+import router from "next/dist/shared/lib/router/router";
+import { signInWithEmail } from "@/lib/actions/auth.actions";
+import { useRouter } from "next/dist/client/components/navigation";
+
 const SignIn = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -21,10 +27,14 @@ const SignIn = () => {
 
   const onSubmit = async (data: SignInFormData) => {
     try {
-      console.log(data);
-      // TODO: Add sign-in API call
+      const result = await signInWithEmail(data);
+      if (result.success) router.push("/dashboard");
     } catch (e) {
       console.error(e);
+      toast.error("Sign in failed. Please try again.", {
+        description:
+          e instanceof Error ? e.message : "Failed to sign in to your account.",
+      });
     }
   };
 

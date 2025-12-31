@@ -33,7 +33,7 @@ import Link from "next/link";
 import NavItems from "./NavItems";
 import UserDropdown from "./UserDropdown";
 
-const Header = () => {
+const Header = ({ user }: { user: User }) => {
   return (
     <header className="sticky top-0 z-50 bg-black/30 backdrop-blur-xl border-b border-white/10">
       {/* Green glow */}
@@ -59,6 +59,7 @@ const Header = () => {
         <nav className="hidden sm:block">
           <NavItems />
         </nav>
+        <UserDropdown user={user} />
 
         <UserDropdown />
       </div>
