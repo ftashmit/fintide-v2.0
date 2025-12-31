@@ -46,13 +46,16 @@ const SignIn = () => {
         <InputField
           name="email"
           label="Email"
+          type="email"
           placeholder="john.doe@example.com"
           register={register}
           error={errors.email}
           validation={{
             required: "Email is required",
-            pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-            message: "Invalid email address",
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: "Invalid email address",
+            },
           }}
         />
 
@@ -65,7 +68,14 @@ const SignIn = () => {
           type="password"
           validation={{
             required: "Password is required",
-            minLength: 8,
+            minLength: {
+              value: 8,
+              message: "Password must be at least 8 characters",
+            },
+            pattern: {
+              value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+              message: "Password must contain both letters and numbers",
+            },
           }}
         />
 
