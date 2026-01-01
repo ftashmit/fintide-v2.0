@@ -60,8 +60,6 @@ const Header = ({ user }: { user: User }) => {
           <NavItems />
         </nav>
         <UserDropdown user={user} />
-
-        <UserDropdown />
       </div>
     </header>
   );

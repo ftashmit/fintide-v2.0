@@ -113,10 +113,6 @@ const UserDropdown = ({ user }: { user: User }) => {
     // After sign-out, redirect to the homepage
     await signOut();
 
-const UserDropdown = () => {
-  const router = useRouter();
-
-  const handleSignOut = async () => {
     router.push("/sign-in");
   };
 
