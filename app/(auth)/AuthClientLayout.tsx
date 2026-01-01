@@ -30,14 +30,18 @@ const AuthClientLayout = ({ children }: { children: React.ReactNode }) => {
 
       {/* RIGHT SECTION */}
       <section className="auth-right-section relative overflow-hidden">
-        {/* GREEN GLOW (static, safe) */}
+        {/* GREEN GLOW */}
         <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 bg-green-500/30 blur-[140px]" />
 
         {/* TESTIMONIAL */}
         <div
           className={`z-10 relative lg:mt-4 lg:mb-12
             transition-all duration-700 ease-out
-            ${mounted ? "animate-auth-fade-in-top" : ""}
+            ${
+              mounted
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 -translate-y-10"
+            }
           `}
         >
           <blockquote className="auth-blockquote backdrop-blur-md bg-white/4 rounded-xl p-4">
@@ -69,9 +73,9 @@ const AuthClientLayout = ({ children }: { children: React.ReactNode }) => {
 
         {/* DASHBOARD PREVIEW */}
         <div
-          className={`flex-1 relative transition-all duration-700 ease-out delay-150
-            ${mounted ? "animate-auth-fade-in-bottom" : ""}
-          `}
+          className={`flex-1 relative transition-all duration-700 delay-150 ease-out ${
+            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          }`}
         >
           <Image
             src="/assets/images/dashboard.png"

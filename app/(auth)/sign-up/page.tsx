@@ -5,15 +5,20 @@ import FooterLink from "@/components/forms/FooterLink";
 import InputField from "@/components/forms/InputField";
 import SelectField from "@/components/forms/SelectField";
 import { Button } from "@/components/ui/button";
+import { signUpWithEmail } from "@/lib/actions/auth.actions";
 import {
   INVESTMENT_GOALS,
   PREFERRED_INDUSTRIES,
   RISK_TOLERANCE_OPTIONS,
 } from "@/lib/constants";
+import { useRouter } from "next/navigation";
+import { ArrowUpRight } from "lucide-react";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 const SignUp = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -33,10 +38,14 @@ const SignUp = () => {
   });
   const onSubmit = async (data: SignUpFormData) => {
     try {
-      console.log(data);
-      // Add your form submission logic here (e.g., API call)
+      const result = await signUpWithEmail(data);
+      if (result.success) router.push("/dashboard");
     } catch (e) {
       console.error(e);
+      toast.error("Sign up failed. Please try again.", {
+        description:
+          e instanceof Error ? e.message : "Failed to create an account.",
+      });
     }
   };
   return (
@@ -116,16 +125,24 @@ const SignUp = () => {
           control={control}
           error={errors.preferredIndustry}
           required
-        />
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-          className="green-btn w-full mt-2"
-        >
-          {isSubmitting
-            ? "Creating Account..."
-            : "Start Your Investment Journey"}
-        </Button>
+        />{" "}
+        <div className="group w-full">
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="custom-btn slide-anime w-full mt-2 font-semibold text-white bg-green-500 hover:bg-black hover:text-green-500 hover:ring-1 hover:ring-green-400 text-md"
+          >
+            <span>
+              {isSubmitting
+                ? "Creating Account..."
+                : "Start Your Investment Journey"}
+            </span>
+
+            <span className="arrow-icon font-bold">
+              <ArrowUpRight size={18} strokeWidth={3} />
+            </span>
+          </Button>
+        </div>
         <FooterLink
           text="Already have an account?"
           linkText="Sign In"
