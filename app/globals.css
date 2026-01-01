@@ -498,3 +498,43 @@
 .scrollbar-hide-default::-webkit-scrollbar-thumb:hover {
   background-color: #9095a1;
 }
+<<<<<<< Updated upstream
+=======
+@keyframes fadeGlow {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes authFadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes authFadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-auth-fade-in-top {
+  animation: authFadeInTop 0.7s ease-out forwards;
+}
+
+.animate-auth-fade-in-bottom {
+  animation: authFadeInBottom 0.7s ease-out forwards;
+}
+>>>>>>> Stashed changes
