@@ -25,6 +25,7 @@ const Header = async ({ user }: { user: User }) => {
             width={200}
             height={50}
             className="h-10 w-auto cursor-pointer"
+            priority
           />
         </Link>
 

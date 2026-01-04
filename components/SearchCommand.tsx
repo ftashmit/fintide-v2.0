@@ -75,6 +75,7 @@ export default function SearchCommand({
           {label}
         </Button>
       )}
+
       <CommandDialog
         open={open}
         onOpenChange={setOpen}
