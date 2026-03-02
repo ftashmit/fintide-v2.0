@@ -1,36 +1,216 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fintide
 
-## Getting Started
+[![Stars](https://img.shields.io/github/stars/ftashmit/fintide-v2.0)]()
+[![Issues](https://img.shields.io/github/issues/ftashmit/fintide-v2.0)]()
+[![License](https://img.shields.io/github/license/ftashmit/fintide-v2.0)]()
 
-First, run the development server:
+## 🚀 Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**Fintide** is a modern, component‑driven web experience built with
+**Next.js, TypeScript, and Tailwind CSS**.\
+The goal of the project is to deliver a **fast, clean, scalable fintech
+UI** that is easy to extend and maintain.
+
+It focuses on: - Performance - Clean UI architecture - Reusable
+components - Modern design patterns
+
+------------------------------------------------------------------------
+
+# ✨ What's New in this Version
+
+### Updated Landing Experience
+
+-   Redesigned **Hero Section**
+-   New **Testimonials Block**
+-   Premium **dark theme aesthetic**
+-   Improved layout spacing and visual hierarchy
+
+### Custom Animated Footer
+
+A new animated component located at:
+
+    @/components/ui/flickering-footer
+
+Features: - Subtle flicker animation - Glass / neon inspired design -
+Fully responsive
+
+### Improved UI Utilities
+
+The UI stack now includes:
+
+-   `@radix-ui/react-icons`
+-   `clsx`
+-   `tailwind-merge`
+-   `motion`
+-   `color-bits`
+
+These improve: - class management - animations - accessibility - styling
+consistency
+
+------------------------------------------------------------------------
+
+# 🧩 Features
+
+### Responsive Design
+
+-   Mobile‑first architecture
+-   Tailwind breakpoints (`sm`, `md`, `lg`, `xl`)
+-   Works across devices
+
+### Component‑First Structure
+
+UI sections are modular:
+
+-   Hero
+-   Testimonials
+-   Footer
+-   Layout containers
+
+Each component can be swapped independently.
+
+### Shadcn‑Compatible
+
+Project follows **components/ui conventions**, making it fully
+compatible with:
+
+-   shadcn/ui patterns
+-   Radix primitives
+-   modern UI ecosystems
+
+------------------------------------------------------------------------
+
+# 🧰 Tech Stack
+
+  Technology             Purpose
+  ---------------------- -----------------
+  Next.js (App Router)   Framework
+  React                  UI
+  TypeScript             Type safety
+  Tailwind CSS           Styling
+  Radix Icons            Icon system
+  clsx                   Class utilities
+  tailwind-merge         Class merging
+  motion                 Animations
+  color-bits             Color utilities
+
+------------------------------------------------------------------------
+
+# ⚙️ Getting Started
+
+## 1. Clone the repository
+
+``` bash
+git clone https://github.com/ftashmit/fintide-v2.0.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 2. Navigate into the project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+``` bash
+cd fintide-v2.0
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 3. Install dependencies
 
-## Learn More
+``` bash
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 4. Run development server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+``` bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+App will run at:
 
-## Deploy on Vercel
+    http://localhost:3000
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+------------------------------------------------------------------------
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 🏗 Production Build
+
+``` bash
+npm run build
+npm start
+```
+
+------------------------------------------------------------------------
+
+# 📂 Project Structure
+
+    fintide
+    │
+    ├── app
+    │   └── page.tsx
+    │
+    ├── components
+    │   └── ui
+    │       └── flickering-footer.tsx
+    │
+    ├── public
+    │
+    ├── styles
+    │
+    └── package.json
+
+------------------------------------------------------------------------
+
+# 💡 Usage Example
+
+### Import the Footer
+
+``` ts
+import { Component as Footer } from "@/components/ui/flickering-footer";
+```
+
+### Add it to the page layout
+
+``` tsx
+export default function Page() {
+  return (
+    <main className="min-h-screen bg-black">
+      {/* Page Content */}
+
+      <Footer />
+    </main>
+  );
+}
+```
+
+------------------------------------------------------------------------
+
+# 🎨 Design Philosophy
+
+Fintide aims to deliver:
+
+-   Modern fintech visuals
+-   Minimalist design
+-   Smooth interactions
+-   Clean typography
+-   Reusable UI patterns
+
+Inspired by platforms like:
+
+-   Vercel
+-   Stripe
+-   Linear
+-   Apple product pages
+
+------------------------------------------------------------------------
+
+# 🤝 Contributing
+
+Pull requests are welcome.
+
+If you'd like to contribute:
+
+1.  Fork the repo
+2.  Create a new branch
+3.  Submit a PR
+
+
+------------------------------------------------------------------------
+
+# 🌊 Fintide
+
+**Track markets. Discover trends. Move smarter.**
